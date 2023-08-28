@@ -1,0 +1,12 @@
+.form-container {
+    border: 2px solid #000;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-components > label > input {
+    display: flex;
+}
