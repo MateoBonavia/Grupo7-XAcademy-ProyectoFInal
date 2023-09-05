@@ -1,22 +1,25 @@
-<div class="form-container">
-  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="form">
-    <div class="form-components">
-      <label>
-        User
+<div class="general-container">
+  <div class="form-container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="form">
+      <div class="head">
+        <span>Sign In</span>
+      </div>
+      <div class="form-components">
         <input formControlName="user" placeholder="Your user" required />
-      </label>
-    </div>
-    <div class="form-components">
-      <label>
-        Password
         <input
           formControlName="password"
           placeholder="Your password"
           type="password"
           required
         />
-      </label>
+      </div>
+      <button type="submit">Sign in</button>
+    </form>
+    <div class="form-footer">
+      <p>Click para responder el <a href="/inicio">formulario</a></p>
     </div>
-    <button type="submit">Login</button>
-  </form>
+  </div>
+
+  <!-- PARA BORRAR -->
+  <!-- <button><a href="/inicio">Inicio</a></button> -->
 </div>

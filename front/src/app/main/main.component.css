@@ -1,0 +1,55 @@
+.container {
+  background-color: #212121;
+  height: 96vh;
+  width: 99vw;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaaaaa;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 400px;
+  font-size: 20px;
+}
+
+.body > p {
+  color: #aaaaaa;
+}
+
+/* .layout {
+  width: 1366px;
+  height: 768px;
+
+  display: grid;
+  grid:
+    "header header header" auto
+    "leftSide body rightSide" 1fr
+    "footer footer footer" auto
+    / auto 1fr auto;
+  gap: 8px;
+  background-color: #212121;
+}
+
+.header {
+  grid-area: header;
+}
+.leftSide {
+  grid-area: leftSide;
+}
+.body {
+  grid-area: body;
+  margin-top: 100px;
+}
+.rightSide {
+  grid-area: rightSide;
+}
+.footer {
+  grid-area: footer;
+} */
