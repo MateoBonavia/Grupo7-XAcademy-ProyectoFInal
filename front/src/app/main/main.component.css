@@ -1,14 +1,16 @@
 .container {
-  background-color: #212121;
-  height: 96vh;
-  width: 99vw;
+  /* background-color: #212121; */
+  background-image: url("../../assets/images/nicolas-ruiz-KofxGY-TJ5s-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
 .title {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #aaaaaa;
+  color: #000000;
 }
 
 .body {
@@ -17,10 +19,13 @@
   align-items: center;
   margin: 0px 400px;
   font-size: 20px;
+  background: transparent;
+  backdrop-filter: blur(3px);
+  padding: 50px;
 }
 
 .body > p {
-  color: #aaaaaa;
+  color: #000000;
 }
 
 /* .layout {
