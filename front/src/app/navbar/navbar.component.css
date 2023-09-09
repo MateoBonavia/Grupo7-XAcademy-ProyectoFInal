@@ -2,9 +2,9 @@
   margin: 0;
   padding: 0;
 
-  background: #232323;
+  /* background: #232323; */
   color: #cdcdcd;
-  font-family: "Avenir Next", "Avenir", sans-serif;
+  overflow: hidden;
 }
 
 #menuToggle {
@@ -12,6 +12,8 @@
   position: relative;
   top: 40px;
   left: 40px;
+  /* margin-left: 40px;
+  margin-top: 40px; */
 
   z-index: 1;
 

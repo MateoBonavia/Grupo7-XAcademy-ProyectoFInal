@@ -1,9 +1,21 @@
+/* -------------------------------------------------------- Primero --------------------------------------------------- */
+
 .general-container {
-  background-color: #212121;
-  height: 98vh;
+  /* background-color: #212121; */
+  background-image: url("../../assets/images/nicolas-ruiz-KofxGY-TJ5s-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container-for-blur {
+  border-radius: 10px;
+  background: transparent;
+  backdrop-filter: blur(1px);
+  padding: 280px 500px;
 }
 
 .form-container {
