@@ -11,16 +11,17 @@ const session = require('express-session');
 const cors = require('cors');
 const logger = require('./utils/winston.logger');
 
+const { initializeDB } = require('./config/files/sequelize.config');
+
 // Models:
 const models = require('./models');
 
 // Rutes:
 const routes = require('./routes');
-
 const config = require('./config/config');
 
 const app = express();
-
+app.use(express.json()); // Parsea un json middleware incorporado a express
 app.use(helmet());
 app.use(helmet.ieNoOpen());
 // Sets "Strict-Transport-Security: max-age=5184000; includeSubDomains".
@@ -43,11 +44,11 @@ const sess = {
     secure: true,
   },
 };
+
 if (config.environment === 'production') {
   app.set('trust proxy', 1); // trust first proxy
 }
 app.use(session(sess));
-app.use(express.json());
 app.use(express.urlencoded(
   {
     extended: false,
@@ -55,6 +56,8 @@ app.use(express.urlencoded(
     parameterLimit: 10,
   },
 ));
+
+app.use(express.json());
 
 // Cors configuration
 const whitelist = process.env.CORS.split(' ');
@@ -74,7 +77,6 @@ app.use(cors(corsOptions));
 if (config.environment === 'production') {
   app.set('trust proxy', 1); // trust first proxy
 }
-
 models.sequelize.authenticate()
   .then(() => {
     logger.api.debug('Conexión con la Base de Datos: EXITOSA');
@@ -84,5 +86,14 @@ models.sequelize.authenticate()
     logger.api.error(err);
   });
 
-app.use('/', routes);
+const IniciarDB = true;
+if (IniciarDB) { initializeDB(); }
+
+app.get('/', (req, res) => {
+  res.send('Hola desde la ruta principal');
+});
+
+app.use('/login', routes.logginRouter);
+app.use('/user', routes.userRouter);
+
 module.exports = app;

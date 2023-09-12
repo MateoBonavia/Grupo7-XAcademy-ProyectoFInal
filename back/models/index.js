@@ -1,4 +1,5 @@
 /* eslint-disable global-require */
+/*
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
@@ -17,7 +18,7 @@ if (config.use_env_variable) {
 }
 
 fs
-  .readdirSync(__dirname)
+.readdirSync(__dirname)
   .filter((file) => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))
   .forEach((file) => {
     // eslint-disable-next-line import/no-dynamic-require
@@ -33,5 +34,9 @@ Object.keys(db).forEach((modelName) => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+db.User = User;
+*/
 
-module.exports = db;
+const User = require('./user');
+
+module.exports = User;

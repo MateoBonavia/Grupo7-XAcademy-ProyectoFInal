@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  ubuntu:
+    container_name: ubuntu
+    build: .
+    command: tail -f /dev/null
+    volumes:
+      - ./ubuntu:/home
+
+  #docker exec -it ubuntu bash
+
+  mysql:
+    container_name: mysql
+    image: mysql:8.0.33
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - 3308:3306
+
+  #docker exec -it mysql mysql -uroot -proot
+    #CREATE DATABASE pruebas;
+    #use pruebas
+    #show databases;
+
+    #Puerto 3307 de la computadora apunta al puerto 3306 del contenedor host
+    #El puerto 3306 es el puerto por defecto de mysql por lo que se mapea de esta forma
+ 
+    #(necesario apt install mysql-client si no tiene)
+    #mysql -uroot -proot -h127.0.0.1 / -P3307 (Para mysql2 poner puerto)
+    
+    #adentro de contenedor de ubuntu
+      #mysql -uroot -proot -hmysql / -hmysql2 (Para mysql2 poner nombre contenedor)
+
+
