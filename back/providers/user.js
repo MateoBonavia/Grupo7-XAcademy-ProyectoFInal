@@ -12,6 +12,7 @@ const createUser = async (user) => {
 
 const getUser = async (userId) => {
   try {
+    // console.log(User);
     const user = await User.findByPk(userId, { include: { all: true } });
     return user;
   } catch (err) {
