@@ -5,6 +5,10 @@ const jwt = require('jsonwebtoken');
 const authMiddleware = require('../middleware/auth.middleware');
 const { userService } = require('../services');
 
+router.get('/', (req, res) => {
+  res.send('Hola desde login');
+});
+
 router.post('/', async (req, res) => {
   const { user, pass } = req.body;
   const userFound = await userService.validateUser(user, pass);

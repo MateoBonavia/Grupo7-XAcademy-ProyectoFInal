@@ -90,3 +90,6 @@ function onListening() {
     : `port ${addr.port}`;
   debug(`Listening on ${bind}`);
 }
+
+const { initializeDB } = require('../config/files/sequelize.config');
+initializeDB();

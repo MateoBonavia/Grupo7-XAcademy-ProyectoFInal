@@ -11,13 +11,11 @@ const session = require('express-session');
 const cors = require('cors');
 const logger = require('./utils/winston.logger');
 
-const { initializeDB } = require('./config/files/sequelize.config');
-
 // Models:
 const models = require('./models');
 
 // Rutes:
-const routes = require('./routes');
+const { userRouter, logginRouter } = require('./routes');
 const config = require('./config/config');
 
 const app = express();
@@ -86,14 +84,12 @@ models.sequelize.authenticate()
     logger.api.error(err);
   });
 
-const IniciarDB = true;
-if (IniciarDB) { initializeDB(); }
-
 app.get('/', (req, res) => {
   res.send('Hola desde la ruta principal');
 });
 
-app.use('/login', routes.logginRouter);
-app.use('/user', routes.userRouter);
+app.use('/login', logginRouter);
+app.use('/user', userRouter);
+// app.use('/app', appRouter);
 
 module.exports = app;

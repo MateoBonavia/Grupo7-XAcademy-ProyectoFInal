@@ -2,7 +2,7 @@ const { userService } = require('../services');
 
 const createUser = async (req, res) => {
   try {
-    console.log(`User created by User with role: ${req.user.role}`);
+    // console.log(`User created by User with role: ${req.user.role}`);
     const newUser = await userService.createUser(req.body);
     res.json(newUser);
   } catch (err) {
