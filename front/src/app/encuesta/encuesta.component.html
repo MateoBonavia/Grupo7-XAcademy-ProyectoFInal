@@ -2,5 +2,140 @@
   <nav class="navbar-container">
     <app-navbar></app-navbar>
   </nav>
-  <div class="form-container"><p>Encuesta</p></div>
+  <div class="form-container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="form">
+      <div class="form-components">
+        <!-- Form -->
+        <!-- Edad -->
+        <div>
+          <p>Edad</p>
+          <label><input type="number" /> años</label>
+        </div>
+        <!-- Sexo -->
+        <div>
+          <p>Sexo:</p>
+          <div>
+            <input type="radio" value="Masculino" name="sexo" />
+            <label>Masculino</label>
+            <input type="radio" value="Femenino" name="sexo" />
+            <label>Femenino</label>
+          </div>
+        </div>
+        <!-- Procedencia -->
+        <div>
+          <p>Pocedencia:</p>
+        </div>
+        <!-- ¿Con quien vino a Mina Clavero -->
+        <div>
+          <p>¿Con quien vino a mina clavero?</p>
+          <div>
+            <input type="radio" value="Solo" name="acompañante" />
+            <label>Solo</label>
+            <input type="radio" value="Pareja" name="acompañante" />
+            <label>Con su pareja</label>
+            <input type="radio" value="Familia" name="acompañante" />
+            <label>Con su familia</label>
+            <input type="radio" value="Amigos" name="acompañante" />
+            <label>Con amigos</label>
+            <input type="radio" value="Excursion" name="acompañante" />
+            <label>En una excursion</label>
+            <label>Otros ¿Cuales?</label>
+            <input type="text" />
+          </div>
+        </div>
+        <!-- ¿A traves de que medio conocio el destino Mina Clavero? -->
+        <div>
+          <p>¿A traves de que medio conocio el destino Mina Clavero?</p>
+          <p>(Puede marcar mas de una opcion.)</p>
+          <div>
+            <input type="radio" name="medio" />
+            <label>Televisión</label>
+            <input type="radio" name="medio" />
+            <label>Página Web</label>
+            <input type="radio" name="medio" />
+            <label>Radio</label>
+            <input type="radio" name="medio" />
+            <label>Medios Gráficos</label>
+            <input type="radio" name="medio" />
+            <label>Facebook</label>
+            <input type="radio" name="medio" />
+            <label>Recomendacion</label>
+            <label>Otros ¿Cuales?</label>
+            <input type="text" />
+          </div>
+        </div>
+        <!-- ¿Por qué eligió Mina Clavero para pasar sus vacaciones? -->
+        <div>
+          <p>¿Por qué eligió Mina Clavero para pasar sus vacaciones?</p>
+          <p>(Puede marcar más de una opción.)</p>
+          <div>
+            <input type="radio" name="eleccion" />
+            <label>Porque ya conocía y le gustó el lugar </label>
+            <input type="radio" name="eleccion" />
+            <label>Porque se lo recomendaron</label>
+            <input type="radio" name="eleccion" />
+            <label>Porque vio alguna promoción en los medios </label>
+            <input type="radio" name="eleccion" />
+            <label>Porque es un lugar tranquilo para la familia </label>
+            <label>Por sus paisajes</label>
+            <input type="radio" name="eleccion" />
+            <label>Por sus eventos</label>
+            <input type="radio" name="eleccion" />
+            <label>Por la amabilidad de los vecinos</label>
+            <label>Otros</label>
+            <input type="text" name="eleccion" />
+          </div>
+        </div>
+        <!-- En cuanto a Hospedaje: ¿Ud. llegó a Mina Clavero? -->
+        <div>
+          <p>En cuanto a Hospedaje: ¿Ud. llegó a Mina Clavero?</p>
+          <div>
+            <p>Con Reserva- ¿A través de que medio hizo la reserva?</p>
+            <input type="text" />
+            <label>Sin reserva</label>
+            <input type="radio" />
+          </div>
+        </div>
+        <!-- ¿Qué tipo de Hospedaje ha tomado? -->
+        <div>
+          <p>¿Qué tipo de Hospedaje ha tomado?</p>
+          <div>
+            <input type="radio" name="Hospedaje" />
+            <label>Hotel</label>
+            <input type="radio" name="Hospedaje" />
+            <label>Cabaña</label>
+            <input type="radio" name="Hospedaje" />
+            <label>Hosteria</label>
+            <input type="radio" name="Hospedaje" />
+            <label>Camping</label>
+            <input type="radio" name="Hospedaje" />
+            <label>Casa de alquiler</label>
+            <label>Otros ¿Cuales?</label>
+            <input type="text" />
+          </div>
+        </div>
+        <!-- ¿Cómo es el servicio en el hospedaje que ha contratado? -->
+        <div>
+          <p>¿Cómo es el servicio en el hospedaje que ha contratado?</p>
+          <div>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Excelente</label>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Muy Buena</label>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Buena</label>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Regular</label>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Mala</label>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Muy Mala</label>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Pesima</label>
+          </div>
+        </div>
+        <!-- Form -->
+      </div>
+    </form>
+  </div>
 </div>
