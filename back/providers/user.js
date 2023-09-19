@@ -21,12 +21,12 @@ const getUser = async (userId) => {
   }
 };
 
-const validateUser = async (options) => {
+const validateUser = async (email, password) => {
   try {
     const user = await User.findAll({
       where: {
-        email: options.user,
-        password: options.pass,
+        email,
+        password,
       },
     });
     if (user.length !== 0) {

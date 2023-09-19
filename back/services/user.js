@@ -10,8 +10,8 @@ const getUser = async (userId) => {
   return userProvider.getUser(userId);
 };
 
-const validateUser = async (user, pass) => {
-  const userFound = await userProvider.validateUser(user, pass);
+const validateUser = async (email, password) => {
+  const userFound = await userProvider.validateUser(email, password);
   return userFound;
 };
 
