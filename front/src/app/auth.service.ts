@@ -7,6 +7,7 @@ export class AuthService {
   constructor() {}
 
   isLogin = () => {
-    return true;
+    const result = localStorage.getItem('token') ? true : false;
+    return result;
   };
 }

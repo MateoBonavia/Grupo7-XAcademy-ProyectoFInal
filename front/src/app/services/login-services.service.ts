@@ -18,7 +18,11 @@ export class LoginService {
     // } else {
     //   return false;
     // }
-    const result = this.http.get('http://localhost:4001/login');
+    const result = this.http.get('http://localhost:4001/login', form);
+    // if (result.token) {
+    //   localStorage.setItem('token', result.token);
+    //   return result;
+    // }
     return result;
   }
 }
