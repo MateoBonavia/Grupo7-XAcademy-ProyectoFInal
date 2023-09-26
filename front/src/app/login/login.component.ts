@@ -20,6 +20,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: FormGroup) {
-    this.loginService.loginUser(form);
+    const result = this.loginService.loginUser(form);
+    // if (result === true) {
+    //   console.log('Sesion iniciada');
+    // } else {
+    //   console.log('Usuario o contraseña incorecta');
+    // }
+    console.log(result);
   }
 }

@@ -2,5 +2,333 @@
   <nav class="navbar-container">
     <app-navbar></app-navbar>
   </nav>
-  <div class="form-container"><p>Encuesta</p></div>
+  <div class="form-container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="form">
+      <div class="form-components">
+        <!-- Form -->
+        <!-- Edad -->
+        <div class="edad">
+          <p>Edad</p>
+          <label><input type="number" class="edad-input" /> años</label>
+        </div>
+        <!-- Sexo -->
+        <div class="sexo">
+          <p>Sexo:</p>
+          <div class="sexo-components">
+            <input type="radio" value="Masculino" name="sexo" />
+            <label>Masculino</label>
+            <input type="radio" value="Femenino" name="sexo" />
+            <label>Femenino</label>
+          </div>
+        </div>
+        <!-- Procedencia -->
+        <div class="procedencia">
+          <p>Pocedencia:</p>
+        </div>
+        <!-- ¿Con quien vino a Mina Clavero -->
+        <div class="acompañamiento">
+          <p>¿Con quien vino a mina clavero?</p>
+          <div class="acompañamiento-components">
+            <input type="radio" value="Solo" name="acompañante" />
+            <label>Solo</label>
+            <input type="radio" value="Pareja" name="acompañante" />
+            <label>Con su pareja</label>
+            <input type="radio" value="Familia" name="acompañante" />
+            <label>Con su familia</label>
+            <input type="radio" value="Amigos" name="acompañante" />
+            <label>Con amigos</label>
+            <input type="radio" value="Excursion" name="acompañante" />
+            <label>En una excursion</label>
+            <label>Otros ¿Cuales?</label>
+            <input type="text" />
+          </div>
+        </div>
+        <!-- ¿A traves de que medio conocio el destino Mina Clavero? -->
+        <div class="medio-conocimiento">
+          <p>
+            ¿A traves de que medio conocio el destino Mina Clavero? (Puede
+            marcar mas de una opcion.)
+          </p>
+
+          <div>
+            <input type="radio" name="medio" />
+            <label>Televisión</label>
+            <input type="radio" name="medio" />
+            <label>Página Web</label>
+            <input type="radio" name="medio" />
+            <label>Radio</label>
+            <input type="radio" name="medio" />
+            <label>Medios Gráficos</label>
+            <input type="radio" name="medio" />
+            <label>Facebook</label>
+            <input type="radio" name="medio" />
+            <label>Recomendacion</label>
+            <label>Otros ¿Cuales?</label>
+            <input type="text" />
+          </div>
+        </div>
+        <!-- ¿Por qué eligió Mina Clavero para pasar sus vacaciones? -->
+        <div class="porque-eligio">
+          <p>¿Por qué eligió Mina Clavero para pasar sus vacaciones?</p>
+          <p>(Puede marcar más de una opción.)</p>
+          <div>
+            <input type="radio" name="eleccion" />
+            <label>Porque ya conocía y le gustó el lugar </label>
+            <input type="radio" name="eleccion" />
+            <label>Porque se lo recomendaron</label>
+            <input type="radio" name="eleccion" />
+            <label>Porque vio alguna promoción en los medios </label>
+            <input type="radio" name="eleccion" />
+            <label>Porque es un lugar tranquilo para la familia </label>
+            <label>Por sus paisajes</label>
+            <input type="radio" name="eleccion" />
+            <label>Por sus eventos</label>
+            <input type="radio" name="eleccion" />
+            <label>Por la amabilidad de los vecinos</label>
+            <label>Otros</label>
+            <input type="text" name="eleccion" />
+          </div>
+        </div>
+        <!-- reserva -->
+        <div class="tiene-reserva">
+          <p>En cuanto a Hospedaje: ¿Ud. llegó a Mina Clavero?</p>
+          <div>
+            <p>Con Reserva- ¿A través de que medio hizo la reserva?</p>
+            <input type="text" />
+            <label>Sin reserva</label>
+            <input type="radio" />
+          </div>
+        </div>
+        <!-- ¿Qué tipo de Hospedaje ha tomado? -->
+        <div class="tipo-hospedaje">
+          <p>¿Qué tipo de Hospedaje ha tomado?</p>
+          <div>
+            <input type="radio" name="Hospedaje" />
+            <label>Hotel</label>
+            <input type="radio" name="Hospedaje" />
+            <label>Cabaña</label>
+            <input type="radio" name="Hospedaje" />
+            <label>Hosteria</label>
+            <input type="radio" name="Hospedaje" />
+            <label>Camping</label>
+            <input type="radio" name="Hospedaje" />
+            <label>Casa de alquiler</label>
+            <label>Otros ¿Cuales?</label>
+            <input type="text" />
+          </div>
+        </div>
+        <!-- ¿Cómo es el servicio en el hospedaje que ha contratado? -->
+        <div class="calificacion-hospedaje">
+          <p>¿Cómo es el servicio en el hospedaje que ha contratado?</p>
+          <div>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Excelente</label>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Muy Buena</label>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Buena</label>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Regular</label>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Mala</label>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Muy Mala</label>
+            <input type="radio" name="Hospedaje-calificacion" />
+            <label>Pesima</label>
+          </div>
+        </div>
+        <!-- ¿Recibió material informativo de la Secretaría de Turismo en el hospedaje donde se alojó? -->
+        <div class="material-informativo">
+          <p>
+            ¿Recibió material informativo de la Secretaría de Turismo en el
+            hospedaje donde se alojó?
+          </p>
+          <div>
+            <input type="radio" name="material-informativo" />
+            <label>Si</label>
+            <input type="radio" name="material-informativo" />
+            <label>No</label>
+            <label>¿Cual?</label>
+            <input type="text" name="material-informativo" />
+          </div>
+        </div>
+        <!-- ¿Ud. pidió información en las Oficinas de Turismo de Mina Clavero?  -->
+        <div class="solicito-informacion-secretariaTurismo">
+          <div>
+            <p>
+              ¿Ud. pidió información en las Oficinas de Turismo de Mina Clavero?
+            </p>
+            <div>
+              <input
+                type="radio"
+                name="solicito-informacion-secretariaTurismo"
+              />
+              <label>Si</label>
+              <input
+                type="radio"
+                name="solicito-informacion-secretariaTurismo"
+              />
+              <label>No</label>
+
+              <!-- ¿En qué Oficina lo hizo?  -->
+              <div>
+                <p>¿En qué Oficina lo hizo?</p>
+                <div>
+                  <input type="radio" name="Hospedaje-calificacion" />
+                  <label>Oficina de la Rotonda de Ingreso</label>
+                  <input type="radio" name="Hospedaje-calificacion" />
+                  <label>Oficina de Plazoleta Merlo</label>
+                  <input type="radio" name="Hospedaje-calificacion" />
+                  <label>Oficina de la Terminal </label>
+                </div>
+              </div>
+
+              <!-- ¿Qué tipo de Información solicitó en las Oficinas de Turismo de Mina Clavero? -->
+              <div>
+                <p>
+                  ¿Qué tipo de Información solicitó en las Oficinas de Turismo
+                  de Mina Clavero? (Puede marcar más de una opción.)
+                </p>
+                <div>
+                  <input type="radio" name="Hospedaje" />
+                  <label>Hospedaje</label>
+                  <input type="radio" name="Paseos" />
+                  <label>Paseos</label>
+                  <input type="radio" name="Eventos" />
+                  <label>Eventos</label>
+                  <input type="radio" name="Gastronomía" />
+                  <label>Gastronomía</label>
+                  <input type="radio" name="Turismo" />
+                  <label>Turismo Aventura</label>
+                  <input type="radio" name="Servicios" />
+                  <label>Servicios</label>
+                  <input type="radio" name="Rutas" />
+                  <label>Rutas</label>
+                  <label>Otros ¿Cuales?</label>
+                  <input type="text" />
+                </div>
+              </div>
+              <!-- ¿A través de que medio solicitó información en las Oficina de
+                  Turismo de Mina Clavero? -->
+              <div>
+                <p>
+                  ¿A través de que medio solicitó información en las Oficina de
+                  Turismo de Mina Clavero? (Puede marcar más de una opción.)
+                </p>
+                <div>
+                  <input type="radio" name="Personalmente" />
+                  <label>Personalmente</label>
+                  <input type="radio" name="mail" />
+                  <label>Vía mail</label>
+                  <input type="radio" name="Facebook" />
+                  <label>Vía Facebook</label>
+                  <input type="radio" name="Telefónica" />
+                  <label>Vía Telefónica</label>
+                  <label>Otros ¿Cual?</label>
+                  <input type="text" />
+                </div>
+              </div>
+              <!-- Qué tipo de material se le entregó en la Oficina de Turismo? -->
+              <div>
+                <p>
+                  Qué tipo de material se le entregó en la Oficina de Turismo?
+                </p>
+                <div>
+                  <input type="radio" name="Folleto" />
+                  <label>Folleto</label>
+                  <input type="radio" name="Revista" />
+                  <label>Revista</label>
+                  <input type="radio" name="Planos" />
+                  <label>Planos</label>
+                  <input type="radio" name="Calcomanías" />
+                  <label>Calcomanías</label>
+                  <input type="radio" name="Guía" />
+                  <label>Guía de Servicios</label>
+                </div>
+              </div>
+              <!-- Cómo evalúa el tipo de información brindada por las Oficinas de Turismo de Mina Clavero? -->
+              <div>
+                <p>
+                  Cómo evalúa el tipo de información brindada por las Oficinas
+                  de Turismo de Mina Clavero?
+                </p>
+                <div>
+                  <input type="radio" name="Excelente" />
+                  <label>Excelente</label>
+                  <input type="radio" name="MuyBuena" />
+                  <label>Muy Buena</label>
+                  <input type="radio" name="Buena" />
+                  <label>Buena</label>
+                  <input type="radio" name="Regular" />
+                  <label>Regular</label>
+                  <input type="radio" name="Mala" />
+                  <label>Mala</label>
+                  <input type="radio" name="MuyMala" />
+                  <label>Muy Mala</label>
+                  <input type="radio" name="Pésima" />
+                  <label>Pésima</label>
+                </div>
+              </div>
+              <!-- ¿Aparte de la información solicitada, se le brindó algún otro tipo de información de su interés? -->
+              <div>
+                <div>
+                  <input type="radio" name="Hospedaje-calificacion" />
+                  <label>Si</label>
+                  <input type="radio" name="Hospedaje-calificacion" />
+                  <label>No</label>
+                </div>
+                <div>
+                  <p>¿Qué información se le brindo?</p>
+                  <div>
+                    <input type="radio" name="informacionBrindada" />
+                    <label>Espectáculos en Mina Clavero</label>
+                    <input type="radio" name="informacionBrindada" />
+                    <label>Espectáculos en localidades cercanas</label>
+                    <input type="radio" name="informacionBrindada" />
+                    <label>Recreación</label>
+                    <input type="radio" name="informacionBrindada" />
+                    <label>Actividades deportivas</label>
+                    <input type="radio" name="informacionBrindada" />
+                    <label>Turismo Aventura</label>
+                    <input type="radio" name="informacionBrindada" />
+                    <label>Paseos</label>
+                    <label>Otros ¿Cuales?</label>
+                    <input type="text" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Considera a Mina Clavero como un destino completo en cuanto a su oferta y servicios?  -->
+        <div class="destino-completo">
+          <p>
+            Considera a Mina Clavero como un destino completo en cuanto a su
+            oferta y servicios?
+          </p>
+          <div>
+            <input type="radio" name="destinoCompleto" />
+            <label>Si</label>
+            <input type="radio" name="destinoCompleto" />
+            <label>No</label>
+            <label>¿Por que?</label>
+            <input type="text" />
+          </div>
+        </div>
+        <!-- ¿Recomendaría Mina Clavero como destino turístico? -->
+        <div class="recomendaria">
+          <p>¿Recomendaría Mina Clavero como destino turístico?</p>
+          <div>
+            <input type="radio" name="destinoCompleto" />
+            <label>Si</label>
+            <input type="radio" name="destinoCompleto" />
+            <label>No</label>
+            <label>¿Por que?</label>
+            <input type="text" />
+          </div>
+        </div>
+        <!-- Form -->
+      </div>
+    </form>
+  </div>
 </div>

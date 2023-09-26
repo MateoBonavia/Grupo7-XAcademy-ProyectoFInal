@@ -1,60 +1,88 @@
 .container {
-  /* background-color: #212121; */
-  background-image: url("../../assets/images/nicolas-ruiz-KofxGY-TJ5s-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
+  /* background-image: url("../../assets/images/nicolas-ruiz-KofxGY-TJ5s-unsplash.jpg"); */
+  /* background-size: cover; */
+  /* background-position: center; */
   height: 100vh;
 }
-
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #000000;
-}
-
-.body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px 400px;
-  font-size: 20px;
-  background: transparent;
-  backdrop-filter: blur(3px);
-  padding: 50px;
-}
-
-.body > p {
-  color: #000000;
-}
-
-/* .layout {
-  width: 1366px;
-  height: 768px;
+.layout {
+  background-color: #4c5c68;
+  width: 100vw;
+  height: 100vh;
 
   display: grid;
   grid:
-    "header header header" auto
-    "leftSide body rightSide" 1fr
-    "footer footer footer" auto
-    / auto 1fr auto;
+    "header" auto
+    "main" 1fr
+    "footer" auto
+    / 1fr;
   gap: 8px;
-  background-color: #212121;
 }
 
 .header {
   grid-area: header;
 }
-.leftSide {
-  grid-area: leftSide;
+.main {
+  grid-area: main;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.body {
-  grid-area: body;
-  margin-top: 100px;
+
+.imgs {
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  margin-top: 50px;
+  margin-left: 100px;
 }
-.rightSide {
-  grid-area: rightSide;
+
+.first-img {
+  transform: rotate(-20deg);
+  align-self: start;
 }
+
+.first-img > img {
+  border-radius: 100px 50px 130px 50px;
+  height: 240px;
+}
+
+.second-img {
+  transform: rotate(20deg);
+  align-self: end;
+}
+
+.second-img > img {
+  border-radius: 100px 50px 100px 50px;
+  height: 240px;
+}
+
+.third-img {
+  transform: rotate(-20deg);
+  align-self: start;
+}
+
+.third-img > img {
+  border-radius: 100px 50px 100px 50px;
+  height: 240px;
+}
+
+.description {
+  /* background-color: red; */
+  margin-right: 150px;
+  text-align: center;
+  align-self: center;
+  width: 700px;
+}
+
+.description h1 {
+  font-size: 70px;
+}
+
+.description p {
+  font-size: 20px;
+}
+
 .footer {
   grid-area: footer;
-} */
+}

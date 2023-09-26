@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-encuesta',
@@ -6,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./encuesta.component.css'],
 })
 export class EncuestaComponent implements OnInit {
+  myForm!: FormGroup;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.myForm = new FormGroup({
+      user: new FormControl(''),
+      password: new FormControl(''),
+    });
+  }
+
+  onSubmit(form: FormGroup) {
+    console.log(form);
+  }
 }

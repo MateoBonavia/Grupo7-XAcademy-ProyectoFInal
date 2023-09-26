@@ -7,11 +7,18 @@ import { HttpClient } from '@angular/common/http';
 export class LoginService {
   constructor(private http: HttpClient) {}
 
-  loginUser(form: any) {
-    console.log('User: ', form.value.user);
-    console.log('Password: ', form.value.password);
+  async loginUser(form: any) {
+    // console.log('User: ', form.value.user);
+    // console.log('Password: ', form.value.password);
     // this.http.get('').subscribe((data) => {
     //   console.log(data);
     // });
+    // if (form.value.user === 'Mateo' && form.value.password === '123456') {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
+    const result = this.http.get('http://localhost:4001/login');
+    return result;
   }
 }
