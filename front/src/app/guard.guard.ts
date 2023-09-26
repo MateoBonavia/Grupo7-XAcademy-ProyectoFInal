@@ -25,6 +25,8 @@ export class GuardGuard implements CanActivate {
     | UrlTree {
     if (!this.auth.isLogin()) {
       return this.router.navigate(['/login']).then(() => false);
+    } else {
+      return this.router.navigate(['/inicio']);
     }
     return true;
   }
