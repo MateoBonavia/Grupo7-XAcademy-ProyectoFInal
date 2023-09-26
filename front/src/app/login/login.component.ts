@@ -14,18 +14,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = new FormGroup({
-      user: new FormControl(''),
+      email: new FormControl(''),
       password: new FormControl(''),
     });
   }
 
-  onSubmit(form: FormGroup) {
-    const result = this.loginService.loginUser(form);
-    // if (result === true) {
-    //   console.log('Sesion iniciada');
-    // } else {
-    //   console.log('Usuario o contraseña incorecta');
-    // }
-    console.log(result);
+  onSubmit() {
+    const result = this.loginService.loginUser(this.myForm).subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 }
