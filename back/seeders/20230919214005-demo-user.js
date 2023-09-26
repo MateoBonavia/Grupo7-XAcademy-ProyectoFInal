@@ -1,22 +1,25 @@
 'use strict';
 
-/** @type {import('sequelize-cli').Migration} */
+/** @type {import('sequelize-cli').Seed} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('Users', [{
-      "id": "1",
-      "email": "admin@gmail.com",
-      "password": "admin",
-      "user": "admin"
-    }]);
+  up: async (queryInterface, Sequelize) => {
+    try {
+      const data = [{
+        "id": "1",
+        "email": "admin@gmail.com",
+        "password": "admin",
+        "user": "admin"
+      }];
+      
+      await queryInterface.bulkInsert('Users', data);
+
+      console.log('Seed data inserted successfully.');
+    } catch (error) {
+      console.error('Error seeding data:', error);
+    }
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+  down: async (queryInterface, Sequelize) => {
+    return queryInterface.bulkDelete('Users', null, {});
   }
 };
