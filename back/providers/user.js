@@ -12,6 +12,7 @@ const createUser = async (user) => {
 
 const getUser = async (userId) => {
   try {
+    // console.log(User);
     const user = await User.findByPk(userId, { include: { all: true } });
     return user;
   } catch (err) {
@@ -20,12 +21,12 @@ const getUser = async (userId) => {
   }
 };
 
-const validateUser = async (options) => {
+const validateUser = async (email, password) => {
   try {
     const user = await User.findAll({
       where: {
-        email: options.user,
-        password: options.pass,
+        email,
+        password,
       },
     });
     if (user.length !== 0) {

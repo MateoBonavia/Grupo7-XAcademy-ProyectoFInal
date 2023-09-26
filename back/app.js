@@ -14,14 +14,13 @@ const session = require("express-session");
 const cors = require("cors");
 const logger = require("./utils/winston.logger");
 
-const { initializeDB } = require("./config/files/sequelize.config");
 
 // Models:
-const models = require("./models");
+// const models = require('./models');
 
 // Rutes:
-const routes = require("./routes");
-const config = require("./config/config");
+const { userRouter, logginRouter } = require('./routes');
+const config = require('./config/config');
 
 const app = express();
 app.use(express.json()); // Parsea un json middleware incorporado a express
@@ -82,8 +81,9 @@ app.use(cors(corsOptions));
 if (config.environment === "production") {
   app.set("trust proxy", 1); // trust first proxy
 }
-models.sequelize
-  .authenticate()
+
+/*
+models.sequelize.authenticate()
   .then(() => {
     logger.api.debug("Conexión con la Base de Datos: EXITOSA");
   })
@@ -92,17 +92,13 @@ models.sequelize
     logger.api.error(err);
   });
 
-let IniciarDB = true;
-if (IniciarDB) {
-  IniciarDB = false;
-  initializeDB();
-}
+*/
+app.get('/', (req, res) => {
+  res.send('Hola desde la ruta principal');
+});
 
-// app.get("/", (req, res) => {
-//   res.send("Hola desde la ruta principal");
-// });
-
-app.use("/login", routes.logginRouter);
-app.use("/user", routes.userRouter);
+app.use('/login', logginRouter);
+app.use('/user', userRouter);
+// app.use('/app', appRouter);
 
 module.exports = app;

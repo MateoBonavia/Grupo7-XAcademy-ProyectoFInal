@@ -31,7 +31,7 @@ const sequelize = new Sequelize(
 const initializeDB = async () => {
   try {
     await sequelize.authenticate();
-    await sequelize.sync({ force: true }); // Drop table if true
+    await sequelize.sync({ force: false }); // Drop table if true
     console.log('Conexión a la base de datos establecida');
   } catch (error) {
     console.error('Hubo un error al inicializar la base de datos', error);
