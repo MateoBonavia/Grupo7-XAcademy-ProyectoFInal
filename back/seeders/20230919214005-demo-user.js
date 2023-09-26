@@ -8,7 +8,9 @@ module.exports = {
         "id": "1",
         "email": "admin@gmail.com",
         "password": "admin",
-        "user": "admin"
+        "user": "admin",
+        "createdAt":"2023-09-26",
+        "updatedAt":"2023-09-26 "
       }];
       
       await queryInterface.bulkInsert('Users', data);
