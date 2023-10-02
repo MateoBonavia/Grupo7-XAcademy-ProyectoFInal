@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../config/files/sequelize.config');
 
-const Cuestionario = sequelize.define('Cuestionarios', {
+const Form = sequelize.define('Forms', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -15,41 +15,6 @@ const Cuestionario = sequelize.define('Cuestionarios', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  procedencia: {
-    cuidad: {
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        allowNull: false,
-      },
-      nombre: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-    },
-    provincia: {
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        allowNull: false,
-      },
-      nombre: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-    },
-    pais: {
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        allowNull: false,
-      },
-      nombre: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-    },
-  },
   acompañantes: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -61,20 +26,6 @@ const Cuestionario = sequelize.define('Cuestionarios', {
   motivoEleccion: {
     type: DataTypes.STRING,
     allowNull: false,
-  },
-  hospedaje: {
-    reserva: {
-      type: DataTypes.BOOLEAN,
-    },
-    tipo: {
-      type: DataTypes.STRING,
-    },
-    calidadServicio: {
-      type: DataTypes.STRING,
-    },
-    recibioInformacion: {
-      type: DataTypes.STRING,
-    },
   },
   pidioInformacion: {
     type: DataTypes.BOOLEAN,
@@ -108,4 +59,4 @@ const Cuestionario = sequelize.define('Cuestionarios', {
   },
 });
 
-module.exports = Cuestionario;
+module.exports = Form;
