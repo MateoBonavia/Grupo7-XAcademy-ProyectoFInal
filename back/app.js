@@ -12,8 +12,7 @@ const helmet = require("helmet");
 const session = require("express-session");
 // Winston logger Dependencies
 const cors = require("cors");
-const logger = require("./utils/winston.logger");
-
+// const logger = require("./utils/winston.logger");
 
 // Models:
 // const models = require('./models');
@@ -64,8 +63,12 @@ app.use(
 app.use(express.json());
 
 // Cors configuration
-const whitelist = process.env.CORS.split(" ");
+// const whitelist = process.env.CORS.split(" ");
 
+const corsOptions = {
+  origin: '*'
+};
+/*
 const corsOptions = {
   origin(origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -76,6 +79,7 @@ const corsOptions = {
     }
   },
 };
+*/
 app.use(cors(corsOptions));
 
 if (config.environment === "production") {
