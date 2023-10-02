@@ -5,6 +5,7 @@ const rootPath = require('../middleware/root_path.middleware');
 const errors = require('../middleware/error_handler.middleware');
 const userRouter = require('./user');
 const logginRouter = require('./login');
+const formRouter = require('./form');
 
 const app = Express();
 
@@ -20,4 +21,6 @@ app.use('/', rootPath.handler);
 app.use(rootPath.setHeaders);
 app.use(errors.handler);
 
-module.exports = { app, userRouter, logginRouter };
+module.exports = {
+  app, userRouter, logginRouter, formRouter,
+};
