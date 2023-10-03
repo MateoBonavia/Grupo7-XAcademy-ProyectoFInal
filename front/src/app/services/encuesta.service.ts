@@ -6,11 +6,10 @@ import { ApiService } from '../core/http/api.service';
 @Injectable({
   providedIn: 'root',
 })
-export class LoginService {
+export class EncuestaService {
   constructor(private http: ApiService) {}
 
-  loginUser(form: any) {
-    const datos = { email: form.value.email, password: form.value.password };
-    return this.http.post('login', datos);
+  sendEncuesta(form: any) {
+    return this.http.post('encuesta', form);
   }
 }
