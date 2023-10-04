@@ -176,3 +176,22 @@ input {
   align-items: center;
   border: 2px solid red;
 }
+
+/* ---------------------------------------------------------- */
+
+.btnSubmit {
+  height: 40px;
+  width: 80px;
+  border: none;
+  background-color: #1985a1;
+  color: #cfcfcf;
+  border-radius: 5px;
+  font-size: 17px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnSubmit:hover {
+  transform: rotate(360deg);
+}

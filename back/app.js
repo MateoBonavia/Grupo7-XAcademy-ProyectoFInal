@@ -18,6 +18,7 @@ const cors = require("cors");
 // const models = require('./models');
 
 // Rutes:
+
 const { userRouter, logginRouter, formRouter } = require('./routes');
 const config = require('./config/config');
 
@@ -97,9 +98,10 @@ models.sequelize.authenticate()
   });
 
 */
-app.get('/', (req, res) => {
-  res.send('Hola desde la ruta principal');
+app.get("/", (req, res) => {
+  res.send("Hola desde la ruta principal");
 });
+
 
 app.use('/login', logginRouter);
 app.use('/user', userRouter);
