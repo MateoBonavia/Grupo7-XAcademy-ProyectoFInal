@@ -23,14 +23,6 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  createdAt: {
-    type: DataTypes.DATE,
-    defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    defaultValue: sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
-  },
 });
 
-module.exports = { User };
+module.exports = User;

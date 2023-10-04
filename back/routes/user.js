@@ -5,9 +5,10 @@ const { userController } = require('../controllers');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/hi', (req, res) => {
   res.send('Hola desde user');
 });
+router.get('/', userController.getAllUsers);
 router.get('/:userId', userController.getUser);
 router.post('/', userController.createUser);
 

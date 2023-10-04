@@ -5,15 +5,25 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     try {
       const data = [{
-        "id": "1",
-        "email": "admin@gmail.com",
-        "password": "admin",
-        "user": "admin",
-        "createdAt":"2023-09-26",
-        "updatedAt":"2023-09-26 "
+        id: 1,
+        email: "admin@gmail.com",
+        password: "admin",
+        user: "admin",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }];
+
+      const data2 = [{
+        id: 2,
+        email: "admin2@gmail.com",
+        password: "admin",
+        user: "admin",
+        createdAt: new Date(),
+        updatedAt: new Date()
       }];
       
       await queryInterface.bulkInsert('Users', data);
+      await queryInterface.bulkInsert('Users', data2);
 
       console.log('Seed data inserted successfully.');
     } catch (error) {

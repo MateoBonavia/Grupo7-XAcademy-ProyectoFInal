@@ -1,3 +1,4 @@
 const userController = require('./user');
+const formController = require('./form');
 
-module.exports = { userController };
+module.exports = { userController, formController };

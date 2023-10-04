@@ -18,8 +18,9 @@ const cors = require("cors");
 // const models = require('./models');
 
 // Rutes:
-const { userRouter, logginRouter } = require("./routes");
-const config = require("./config/config");
+
+const { userRouter, logginRouter, formRouter } = require('./routes');
+const config = require('./config/config');
 
 const app = express();
 app.use(express.json()); // Parsea un json middleware incorporado a express
@@ -66,8 +67,20 @@ app.use(express.json());
 // const whitelist = process.env.CORS.split(" ");
 
 const corsOptions = {
-  origin: "*",
+  origin: '*'
 };
+/*
+const corsOptions = {
+  origin(origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      logger.api.error("Not allowed by CORS", { origin });
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+*/
 app.use(cors(corsOptions));
 
 if (config.environment === "production") {
@@ -89,8 +102,10 @@ app.get("/", (req, res) => {
   res.send("Hola desde la ruta principal");
 });
 
-app.use("/login", logginRouter);
-app.use("/user", userRouter);
+
+app.use('/login', logginRouter);
+app.use('/user', userRouter);
+app.use('/form', formRouter);
 // app.use('/app', appRouter);
 
 module.exports = app;
