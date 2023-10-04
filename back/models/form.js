@@ -7,15 +7,19 @@ const Form = sequelize.define('Forms', {
     primaryKey: true,
     allowNull: false,
   },
-  edadTurista: {
+  edad: {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  sexoTurista: {
+  sexo: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  acompañantes: {
+  procedencia: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  acompañamiento: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -26,6 +30,18 @@ const Form = sequelize.define('Forms', {
   motivoEleccion: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  tieneReserva: {
+    type: DataTypes.BOOLEAN,
+  },
+  tipoHospedaje: {
+    type: DataTypes.STRING,
+  },
+  calidadReserva: {
+    type: DataTypes.STRING,
+  },
+  recibioInfoReserva: {
+    type: DataTypes.STRING,
   },
   pidioInformacion: {
     type: DataTypes.BOOLEAN,
@@ -45,16 +61,16 @@ const Form = sequelize.define('Forms', {
   calidadServicioOficina: {
     type: DataTypes.STRING,
   },
-  recibioInformacionAdicional: {
+  recibioInfoExtra: {
     type: DataTypes.BOOLEAN,
   },
-  informacionAdicionalRecibida: {
+  tipoInfoExtra: {
     type: DataTypes.STRING,
   },
-  consideraDestinoCompleto: {
+  destinoCompleto: {
     type: DataTypes.STRING,
   },
-  recomendariaDestino: {
+  recomendaria: {
     type: DataTypes.STRING,
   },
 });
