@@ -12,6 +12,7 @@ const createForm = async (req, res) => {
 const getForm = async (req, res) => {
   try {
     const form = await formService.getForm(req.params.formId);
+
     if (!form) {
       res.status(404).json({ action: 'getForm', error: 'Form not found' });
     }

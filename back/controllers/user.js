@@ -2,7 +2,6 @@ const { userService } = require('../services');
 
 const createUser = async (req, res) => {
   try {
-    // console.log(`User created by User with role: ${req.user.role}`);
     const newUser = await userService.createUser(req.body);
     res.json(newUser);
   } catch (err) {
@@ -22,7 +21,19 @@ const getUser = async (req, res) => {
   }
 };
 
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await userService.getAllUsers();
+    if (!users) {
+      res.status(404).json({ action: 'getAllUsers', error: 'Users not found' });
+    }
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ action: 'getAllUsers', error: err.message });
+  }
+};
 module.exports = {
   createUser,
   getUser,
+  getAllUsers,
 };

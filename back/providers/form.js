@@ -1,4 +1,4 @@
-const { Form } = require('../models/form');
+const Form = require('../models/form');
 
 const createForm = async (form) => {
   try {
@@ -12,7 +12,8 @@ const createForm = async (form) => {
 
 const getForm = async (formId) => {
   try {
-    const form = await Form.findByPk(formId, { include: { all: true } });
+    const form = await Form.findByPk(formId);
+
     return form;
   } catch (err) {
     console.error('Error when fetching Form', err);

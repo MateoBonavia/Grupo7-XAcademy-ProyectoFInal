@@ -1,4 +1,4 @@
-const { User } = require('../models/user');
+const User = require('../models/user');
 
 const createUser = async (user) => {
   try {
@@ -12,12 +12,23 @@ const createUser = async (user) => {
 
 const getUser = async (userId) => {
   try {
-    // console.log(User);
     const user = await User.findByPk(userId, { include: { all: true } });
     return user;
   } catch (err) {
     console.error('Error when fetching User', err);
     throw err;
+  }
+};
+const getAllUsers = async () => {
+  try {
+    const user = await User.findAll();
+    if (user.length !== 0) {
+      return user;
+    }
+    return false;
+  } catch (err) {
+    console.error('Error when get all users', err);
+    return false;
   }
 };
 
@@ -39,4 +50,6 @@ const validateUser = async (email, password) => {
   }
 };
 
-module.exports = { createUser, getUser, validateUser };
+module.exports = {
+  createUser, getUser, getAllUsers, validateUser,
+};
