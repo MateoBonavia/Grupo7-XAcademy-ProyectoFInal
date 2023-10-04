@@ -12,15 +12,14 @@ const helmet = require("helmet");
 const session = require("express-session");
 // Winston logger Dependencies
 const cors = require("cors");
-const logger = require("./utils/winston.logger");
-
+// const logger = require("./utils/winston.logger");
 
 // Models:
 // const models = require('./models');
 
 // Rutes:
-const { userRouter, logginRouter } = require('./routes');
-const config = require('./config/config');
+const { userRouter, logginRouter } = require("./routes");
+const config = require("./config/config");
 
 const app = express();
 app.use(express.json()); // Parsea un json middleware incorporado a express
@@ -64,17 +63,10 @@ app.use(
 app.use(express.json());
 
 // Cors configuration
-const whitelist = process.env.CORS.split(" ");
+// const whitelist = process.env.CORS.split(" ");
 
 const corsOptions = {
-  origin(origin, callback) {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      logger.api.error("Not allowed by CORS", { origin });
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: "*",
 };
 app.use(cors(corsOptions));
 
@@ -93,12 +85,12 @@ models.sequelize.authenticate()
   });
 
 */
-app.get('/', (req, res) => {
-  res.send('Hola desde la ruta principal');
+app.get("/", (req, res) => {
+  res.send("Hola desde la ruta principal");
 });
 
-app.use('/login', logginRouter);
-app.use('/user', userRouter);
+app.use("/login", logginRouter);
+app.use("/user", userRouter);
 // app.use('/app', appRouter);
 
 module.exports = app;
