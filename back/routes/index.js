@@ -9,8 +9,6 @@ const formRouter = require('./form');
 
 const app = Express();
 
-// Rutas
-
 // use=
 app.use('/ping', (req, res) => {
   res.json({
