@@ -8,15 +8,14 @@
         <!-- Form -->
         <!-- Edad -->
         <div class="edad">
-          <p>Edad</p>
+          <h3>Ingrese su edad</h3>
           <label
             ><input type="number" class="edad-input" formControlName="edad" />
-            años</label
-          >
+          </label>
         </div>
         <!-- Sexo -->
         <div class="sexo">
-          <p>Sexo:</p>
+          <h3>Indique su sexo</h3>
           <div class="sexo-components">
             <input
               type="radio"
@@ -36,13 +35,13 @@
         </div>
         <!-- Procedencia -->
         <div class="procedencia">
-          <p>Pocedencia:</p>
+          <h3>Procedencia</h3>
           <input type="text" formControlName="procedencia" />
         </div>
         <!-- ¿Con quien vino a Mina Clavero -->
         <div class="acompañamiento">
-          <p>¿Con quien vino a mina clavero?</p>
-          <div class="acompañamiento-components">
+          <h3>¿Con quien vino a mina clavero?</h3>
+          <div class="components">
             <input
               type="radio"
               value="Solo"
@@ -84,12 +83,12 @@
         </div>
         <!-- ¿A traves de que medio conocio el destino Mina Clavero? -->
         <div class="medio-conocimiento">
-          <p>
+          <h3>
             ¿A traves de que medio conocio el destino Mina Clavero? (Puede
             marcar mas de una opcion.)
-          </p>
+          </h3>
 
-          <div>
+          <div class="components">
             <input
               type="radio"
               name="medio"
@@ -138,9 +137,11 @@
         </div>
         <!-- ¿Por qué eligió Mina Clavero para pasar sus vacaciones? -->
         <div class="porque-eligio">
-          <p>¿Por qué eligió Mina Clavero para pasar sus vacaciones?</p>
-          <p>(Puede marcar más de una opción.)</p>
-          <div>
+          <h3>
+            ¿Por qué eligió Mina Clavero para pasar sus vacaciones? (Puede
+            marcar más de una opción.)
+          </h3>
+          <div class="components">
             <input
               type="radio"
               name="conocia"
@@ -196,18 +197,20 @@
         </div>
         <!-- reserva -->
         <div class="tiene-reserva">
-          <p>En cuanto a Hospedaje: ¿Ud. llegó a Mina Clavero?</p>
-          <div>
-            <p>Con Reserva- ¿A través de que medio hizo la reserva?</p>
-            <input type="text" formControlName="tieneReserva" />
+          <h3>En cuanto a Hospedaje: ¿Ud. llegó a Mina Clavero?</h3>
+          <div class="components">
+            <input type="radio" formControlName="tieneReserva" name="reserva" />
             <label>Sin reserva</label>
-            <input type="radio" formControlName="tieneReserva" />
+            <input type="radio" formControlName="tieneReserva" name="reserva" />
+            <label>Con Reserva</label>
+            <label> ¿A través de que medio hizo la reserva?</label>
+            <input type="text" formControlName="tieneReserva" />
           </div>
         </div>
         <!-- ¿Qué tipo de Hospedaje ha tomado? -->
         <div class="tipo-hospedaje">
-          <p>¿Qué tipo de Hospedaje ha tomado?</p>
-          <div>
+          <h3>¿Qué tipo de Hospedaje ha tomado?</h3>
+          <div class="components">
             <input
               type="radio"
               name="Hospedaje"
@@ -249,8 +252,8 @@
         </div>
         <!-- ¿Cómo es el servicio en el hospedaje que ha contratado? -->
         <div class="calificacion-hospedaje">
-          <p>¿Cómo es el servicio en el hospedaje que ha contratado?</p>
-          <div>
+          <h3>¿Cómo es el servicio en el hospedaje que ha contratado?</h3>
+          <div class="components">
             <input
               type="radio"
               value="Excelente"
@@ -304,11 +307,11 @@
         </div>
         <!-- ¿Recibió material informativo de la Secretaría de Turismo en el hospedaje donde se alojó? -->
         <div class="material-informativo">
-          <p>
+          <h3>
             ¿Recibió material informativo de la Secretaría de Turismo en el
             hospedaje donde se alojó?
-          </p>
-          <div>
+          </h3>
+          <div class="components">
             <input
               type="radio"
               name="material-informativo"
@@ -332,9 +335,9 @@
         <!-- ¿Ud. pidió información en las Oficinas de Turismo de Mina Clavero?  -->
         <div class="solicito-informacion-secretariaTurismo">
           <div>
-            <p>
+            <h3>
               ¿Ud. pidió información en las Oficinas de Turismo de Mina Clavero?
-            </p>
+            </h3>
             <div>
               <input
                 type="radio"
@@ -653,10 +656,10 @@
         </div>
         <!-- Considera a Mina Clavero como un destino completo en cuanto a su oferta y servicios?  -->
         <div class="destino-completo">
-          <p>
+          <h3>
             Considera a Mina Clavero como un destino completo en cuanto a su
             oferta y servicios?
-          </p>
+          </h3>
           <div>
             <input
               type="radio"
@@ -678,7 +681,7 @@
         </div>
         <!-- ¿Recomendaría Mina Clavero como destino turístico? -->
         <div class="recomendaria">
-          <p>¿Recomendaría Mina Clavero como destino turístico?</p>
+          <h3>¿Recomendaría Mina Clavero como destino turístico?</h3>
           <div>
             <input
               type="radio"
@@ -698,7 +701,9 @@
             <input type="text" formControlName="recomendaria" />
           </div>
         </div>
-        <button type="submit">Enviar</button>
+        <div>
+          <button type="submit" class="btnSubmit">Enviar</button>
+        </div>
         <!-- Form -->
       </div>
     </form>

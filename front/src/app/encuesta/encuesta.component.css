@@ -1,3 +1,7 @@
+mat-slider {
+  width: 300px;
+}
+
 .container {
   background-color: #4c5c68;
   height: 100vh;
@@ -10,7 +14,7 @@
 .form-container {
   border: 2px solid #bebebe;
   height: 700px;
-  width: 1500px;
+  width: 90vw;
   margin: auto;
   overflow-y: scroll;
   background-color: #73838f;
@@ -26,6 +30,18 @@
 
 .form-components > div {
   padding: 10px 0;
+}
+
+.components {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+h3 {
+  width: 100%;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 /* --------------- PARA BORRAR -----------------*/
@@ -50,11 +66,11 @@ input {
   gap: 10px;
   align-items: center;
   border: 2px solid red;
+  flex-wrap: wrap;
 }
-
 .edad-input {
-  height: 20px;
-  width: 40px;
+  height: 25px;
+  width: 50px;
 }
 
 /* SEXO */
@@ -64,6 +80,7 @@ input {
   gap: 10px;
   align-items: center;
   border: 2px solid red;
+  flex-wrap: wrap;
 }
 
 .sexo-components {
@@ -79,6 +96,7 @@ input {
   gap: 5px;
   align-items: center;
   border: 2px solid red;
+  flex-wrap: wrap;
 }
 
 /* ACOMPAÑAMIENTO */
@@ -88,12 +106,7 @@ input {
   gap: 5px;
   align-items: center;
   border: 2px solid red;
-}
-
-.acompañamiento-components {
-  display: flex;
-  gap: 5px;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
 /* MEDIO CONOCIMIENTO */
@@ -103,6 +116,7 @@ input {
   gap: 5px;
   align-items: center;
   border: 2px solid red;
+  flex-wrap: wrap;
 }
 
 /* PORQUE ELIGIO MINA CLAVERO */
@@ -112,6 +126,7 @@ input {
   gap: 5px;
   align-items: center;
   border: 2px solid red;
+  flex-wrap: wrap;
 }
 
 /* TIENE RESERVA */
@@ -121,8 +136,8 @@ input {
   gap: 5px;
   align-items: center;
   border: 2px solid red;
+  flex-wrap: wrap;
 }
-
 /* TIPO HOSPEDAJE */
 
 .tipo-hospedaje {
@@ -130,8 +145,8 @@ input {
   gap: 5px;
   align-items: center;
   border: 2px solid red;
+  flex-wrap: wrap;
 }
-
 /* CALIFICAION HOSPEDAJE */
 
 .calificacion-hospedaje {
@@ -139,6 +154,7 @@ input {
   gap: 5px;
   align-items: center;
   border: 2px solid red;
+  flex-wrap: wrap;
 }
 
 /* MATERIAL INFORMATIVO */
@@ -148,6 +164,7 @@ input {
   gap: 5px;
   align-items: center;
   border: 2px solid red;
+  flex-wrap: wrap;
 }
 
 /* SOLICITO INFORMACION SECRETARIA DE TURISMO */
@@ -166,6 +183,7 @@ input {
   gap: 5px;
   align-items: center;
   border: 2px solid red;
+  flex-wrap: wrap;
 }
 
 /* RECOMENDARIA */
@@ -175,4 +193,23 @@ input {
   gap: 5px;
   align-items: center;
   border: 2px solid red;
+  flex-wrap: wrap;
+}
+/* ---------------------------------------------------------- */
+
+.btnSubmit {
+  height: 40px;
+  width: 80px;
+  border: none;
+  background-color: #1985a1;
+  color: #cfcfcf;
+  border-radius: 5px;
+  font-size: 17px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnSubmit:hover {
+  transform: rotate(360deg);
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { EncuestaService } from '../services/encuesta.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-encuesta',
@@ -9,7 +10,10 @@ import { EncuestaService } from '../services/encuesta.service';
 })
 export class EncuestaComponent implements OnInit {
   myForm!: FormGroup;
-  constructor(public encuestaService: EncuestaService) {}
+  constructor(
+    public encuestaService: EncuestaService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.myForm = new FormGroup({
@@ -45,6 +49,6 @@ export class EncuestaComponent implements OnInit {
         console.log(error);
       },
     });
-    // console.log(form.value);
+    console.log(this.myForm);
   }
 }

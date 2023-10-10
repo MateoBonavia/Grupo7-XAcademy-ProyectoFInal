@@ -2,12 +2,8 @@
   background-color: #212121;
   height: 98vh;
   width: 99vw;
+  padding-top: 100px;
 }
-
-.navbar-container {
-  margin-bottom: 100px;
-}
-
 .contacto-container {
   border: 2px solid #bebebe;
   margin: 0px 300px;
