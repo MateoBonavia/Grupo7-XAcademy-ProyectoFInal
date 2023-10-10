@@ -8,6 +8,7 @@ export class AuthService {
 
   isLogin = () => {
     const result = localStorage.getItem('token') ? true : false;
+    console.log(result);
     return result;
   };
 }

@@ -1,0 +1,21 @@
+.container {
+  background-color: #4c5c68;
+  height: 100vh;
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+/* .encuestas-container {
+  width: 80vw;
+} */
+.item {
+  cursor: pointer;
+}
+
+.item {
+  color: #000;
+}
