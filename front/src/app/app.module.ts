@@ -11,6 +11,9 @@ import { MainComponent } from './main/main.component';
 import { EncuestaComponent } from './encuesta/encuesta.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -20,15 +23,18 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MainComponent,
     EncuestaComponent,
     ContactoComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDividerModule,
+    MatListModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

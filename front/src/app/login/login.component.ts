@@ -22,8 +22,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     const result = this.loginService.loginUser(this.myForm).subscribe({
-      next: (response) => {
+      next: (response: any) => {
         this.router.navigate(['inicio']);
+        localStorage.setItem('token', response.token);
       },
       error: (error) => {
         this.router.navigate(['login']);
