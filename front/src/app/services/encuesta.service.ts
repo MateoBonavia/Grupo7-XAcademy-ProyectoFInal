@@ -10,6 +10,10 @@ export class EncuestaService {
   constructor(private http: ApiService) {}
 
   sendEncuesta(form: any) {
-    return this.http.post('encuesta', form);
+    return this.http.post('form', form);
+  }
+
+  getEncuesta() {
+    return this.http.get('form');
   }
 }

@@ -21,8 +21,8 @@ export class EncuestaComponent implements OnInit {
       sexo: new FormControl(''),
       procedencia: new FormControl(''),
       acompañamiento: new FormControl(''),
-      medioDeConocimiento: new FormControl(''),
-      porqueEligio: new FormControl(''),
+      medioConocimiento: new FormControl(''),
+      motivoEleccion: new FormControl(''),
       tieneReserva: new FormControl(''),
       tipoHospedaje: new FormControl(''),
       calificacionHospedaje: new FormControl(''),
@@ -41,14 +41,16 @@ export class EncuestaComponent implements OnInit {
   }
 
   onSubmit() {
-    const result = this.encuestaService.sendEncuesta(this.myForm).subscribe({
-      next: (response) => {
-        console.log(response);
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
+    const result = this.encuestaService
+      .sendEncuesta(this.myForm.value)
+      .subscribe({
+        next: (response) => {
+          console.log('respuesta', response);
+        },
+        error: (error) => {
+          console.log('error', error);
+        },
+      });
     console.log(this.myForm);
   }
 }

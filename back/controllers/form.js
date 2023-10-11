@@ -11,6 +11,7 @@ const createForm = async (req, res) => {
 
 const getForm = async (req, res) => {
   try {
+    console.log('Llegue al cotroller');
     const form = await formService.getForm(req.params.formId);
 
     if (!form) {
