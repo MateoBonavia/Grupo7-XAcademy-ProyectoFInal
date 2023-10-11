@@ -14,6 +14,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { MatListModule } from '@angular/material/list';
     BrowserAnimationsModule,
     MatDividerModule,
     MatListModule,
+    MatExpansionModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
