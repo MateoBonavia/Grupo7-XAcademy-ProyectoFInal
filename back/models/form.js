@@ -7,7 +7,6 @@ const Form = sequelize.define('Forms', {
     primaryKey: true,
     allowNull: false,
     autoIncremet: true,
-
   },
   edad: {
     type: DataTypes.INTEGER,
