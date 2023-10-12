@@ -93,46 +93,46 @@
               type="radio"
               name="television-conocia"
               value="television"
-              formControlName="medioDeConocimiento"
+              formControlName="medioConocimiento"
             />
             <label>Televisión</label>
             <input
               type="radio"
               name="web-conocia"
               value="web"
-              formControlName="medioDeConocimiento"
+              formControlName="medioConocimiento"
             />
             <label>Página Web</label>
             <input
               type="radio"
               name="radio-conocia"
               value="radio"
-              formControlName="medioDeConocimiento"
+              formControlName="medioConocimiento"
             />
             <label>Radio</label>
             <input
               type="radio"
               name="mediosGraficos-conocia"
               value="mediosGraficos"
-              formControlName="medioDeConocimiento"
+              formControlName="medioConocimiento"
             />
             <label>Medios Gráficos</label>
             <input
               type="radio"
               name="facebook-conocia"
               value="facebook"
-              formControlName="medioDeConocimiento"
+              formControlName="medioConocimiento"
             />
             <label>Facebook</label>
             <input
               type="radio"
               name="recomendaciones-conocia"
               value="recomendaciones"
-              formControlName="medioDeConocimiento"
+              formControlName="medioConocimiento"
             />
             <label>Recomendacion</label>
             <label>Otros ¿Cuales?</label>
-            <input type="text" value="" formControlName="medioDeConocimiento" />
+            <input type="text" value="" formControlName="medioConocimiento" />
           </div>
         </div>
         <!-- ¿Por qué eligió Mina Clavero para pasar sus vacaciones? -->
@@ -146,49 +146,49 @@
               type="radio"
               name="conocia"
               value="conocia"
-              formControlName="porqueEligio"
+              formControlName="motivoEleccion"
             />
             <label>Porque ya conocía y le gustó el lugar </label>
             <input
               type="radio"
               name="recomendaron"
               value="recomendaron"
-              formControlName="porqueEligio"
+              formControlName="motivoEleccion"
             />
             <label>Porque se lo recomendaron</label>
             <input
               type="radio"
               name="promocion"
               value="promocion"
-              formControlName="porqueEligio"
+              formControlName="motivoEleccion"
             />
             <label>Porque vio alguna promoción en los medios </label>
             <input
               type="radio"
               name="lugarTranquilo"
               value="lugarTranquilo"
-              formControlName="porqueEligio"
+              formControlName="motivoEleccion"
             />
             <label>Porque es un lugar tranquilo para la familia </label>
             <input
               type="radio"
               name="paisajes"
               value="paisajes"
-              formControlName="porqueEligio"
+              formControlName="motivoEleccion"
             />
             <label>Por sus paisajes</label>
             <input
               type="radio"
               name="eventos"
               value="eventos"
-              formControlName="porqueEligio"
+              formControlName="motivoEleccion"
             />
             <label>Por sus eventos</label>
             <input
               type="radio"
               name="amabilidad"
               value="amabilidad"
-              formControlName="porqueEligio"
+              formControlName="motivoEleccion"
             />
             <label>Por la amabilidad de los vecinos</label>
             <label>Otros</label>
@@ -443,7 +443,7 @@
                 </div>
               </div>
               <!-- ¿A través de que medio solicitó información en las Oficina de
-                  Turismo de Mina Clavero? -->
+                    Turismo de Mina Clavero? -->
               <div>
                 <p>
                   ¿A través de que medio solicitó información en las Oficina de
@@ -689,6 +689,137 @@
               value="si"
               formControlName="recomendaria"
             />
+            <div class="container">
+              <nav class="navbar-container">
+                <app-navbar></app-navbar>
+              </nav>
+              <div>
+                <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form">
+                  <div class="form-container">
+                    <!-- Edad -->
+                    <div class="edad">
+                      <mat-form-field>
+                        <mat-label>Edad</mat-label>
+                        <input matInput formControlName="edad" />
+                      </mat-form-field>
+                    </div>
+                    <!-- Sexo -->
+                    <div class="sexo">
+                      <mat-radio-group aria-label="Select an option">
+                        <label>Seleccione su sexo</label>
+                        <mat-radio-button
+                          value="Masculino"
+                          formControlName="sexo"
+                          >Masculino</mat-radio-button
+                        >
+                        <mat-radio-button
+                          value="Femenino"
+                          formControlName="sexo"
+                          >Femenino</mat-radio-button
+                        >
+                      </mat-radio-group>
+                    </div>
+                    <!-- Procedencia -->
+                    <div class="procedencia">
+                      <mat-form-field>
+                        <mat-label>Procedencia</mat-label>
+                        <input matInput formControlName="procedencia" />
+                      </mat-form-field>
+                    </div>
+                    <!-- ¿Con quien vino a Mina Clavero -->
+                    <div class="acompañamiento">
+                      <mat-radio-group aria-label="Select an option">
+                        <label>¿Con quien vino a mina clavero?</label>
+                        <mat-radio-button
+                          value="Solo"
+                          formControlName="acompañamiento"
+                          >Solo</mat-radio-button
+                        >
+                        <mat-radio-button
+                          value="Pareja"
+                          formControlName="acompañamiento"
+                          >Pareja</mat-radio-button
+                        >
+                        <mat-radio-button
+                          value="Familia"
+                          formControlName="acompañamiento"
+                          >Con su familia</mat-radio-button
+                        >
+                        <mat-radio-button
+                          value="amigos"
+                          formControlName="acompañamiento"
+                          >Con amigos</mat-radio-button
+                        >
+                        <mat-radio-button
+                          value="Excursion"
+                          formControlName="acompañamiento"
+                          >En una excursion</mat-radio-button
+                        >
+                      </mat-radio-group>
+                      <mat-form-field>
+                        <mat-label>Otros ¿Cuales?</mat-label>
+                        <input matInput formControlName="acompañamiento" />
+                      </mat-form-field>
+                    </div>
+                    <!-- ¿A traves de que medio conocio el destino Mina Clavero? -->
+                    <div class="medio-conocimiento">
+                      <label
+                        >¿A traves de que medio conocio el destino Mina Clavero?
+                        (Puede marcar mas de una opcion.)</label
+                      >
+                      <mat-radio-group aria-label="Select an option">
+                        <label>¿Con quien vino a mina clavero?</label>
+                        <mat-radio-button
+                          name="television"
+                          value="television"
+                          formControlName="medioConocimiento"
+                          >Television</mat-radio-button
+                        >
+                        <mat-radio-button
+                          value="web"
+                          names="web"
+                          formControlName="medioConocimiento"
+                          >Página Web</mat-radio-button
+                        >
+                        <mat-radio-button
+                          value="radio"
+                          name="radio"
+                          formControlName="medioConocimiento"
+                          >Radio</mat-radio-button
+                        >
+                        <mat-radio-button
+                          value="mediosGraficos"
+                          name="mediosGraficos"
+                          formControlName="medioConocimiento"
+                          >CMedios Gráficos</mat-radio-button
+                        >
+                        <mat-radio-button
+                          value="facebook"
+                          name="facebook"
+                          formControlName="medioConocimiento"
+                          >Facebook</mat-radio-button
+                        >
+                        <mat-radio-button
+                          value="facebook"
+                          name="facebook"
+                          formControlName="medioConocimiento"
+                          >Recomendacion</mat-radio-button
+                        >
+                      </mat-radio-group>
+                      <mat-form-field>
+                        <mat-label>Otros ¿Cuales?</mat-label>
+                        <input matInput formControlName="medioConocimiento" />
+                      </mat-form-field>
+                    </div>
+                    <!-- ¿Por qué eligió Mina Clavero para pasar sus vacaciones? -->
+                    <div class="porque-eligio">
+                      <label></label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
             <label>Si</label>
             <input
               type="radio"
