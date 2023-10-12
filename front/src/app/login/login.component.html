@@ -7,13 +7,26 @@
           <span>Sign In</span>
         </div>
         <div class="form-components">
-          <input formControlName="email" placeholder="Your email" required />
+          <input formControlName="email" required placeholder="Email" />
+          <span
+            matBadge="!"
+            matBadgeColor="warn"
+            [matBadgeHidden]="hiddenEmail"
+            class="warnEmail"
+          ></span>
           <input
             formControlName="password"
             placeholder="Your password"
             type="password"
             required
+            placeholder="Contraseña"
           />
+          <span
+            matBadge="!"
+            matBadgeColor="warn"
+            [matBadgeHidden]="hiddenPass"
+            class="warnPass"
+          ></span>
         </div>
         <button type="submit">Sign in</button>
       </form>

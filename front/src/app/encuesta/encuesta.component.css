@@ -65,12 +65,16 @@ input {
   display: flex;
   gap: 10px;
   align-items: center;
-  border: 2px solid red;
-  flex-wrap: wrap;
 }
+
+.edad h3 {
+  width: 10%;
+}
+
 .edad-input {
   height: 25px;
   width: 50px;
+  margin-bottom: 15px;
 }
 
 /* SEXO */
@@ -79,7 +83,6 @@ input {
   display: flex;
   gap: 10px;
   align-items: center;
-  border: 2px solid red;
   flex-wrap: wrap;
 }
 
@@ -95,7 +98,7 @@ input {
   display: flex;
   gap: 5px;
   align-items: center;
-  border: 2px solid red;
+
   flex-wrap: wrap;
 }
 
@@ -105,7 +108,7 @@ input {
   display: flex;
   gap: 5px;
   align-items: center;
-  border: 2px solid red;
+
   flex-wrap: wrap;
 }
 
@@ -115,7 +118,7 @@ input {
   display: flex;
   gap: 5px;
   align-items: center;
-  border: 2px solid red;
+
   flex-wrap: wrap;
 }
 
@@ -125,7 +128,7 @@ input {
   display: flex;
   gap: 5px;
   align-items: center;
-  border: 2px solid red;
+
   flex-wrap: wrap;
 }
 
@@ -135,7 +138,7 @@ input {
   display: flex;
   gap: 5px;
   align-items: center;
-  border: 2px solid red;
+
   flex-wrap: wrap;
 }
 /* TIPO HOSPEDAJE */
@@ -144,7 +147,7 @@ input {
   display: flex;
   gap: 5px;
   align-items: center;
-  border: 2px solid red;
+
   flex-wrap: wrap;
 }
 /* CALIFICAION HOSPEDAJE */
@@ -153,7 +156,7 @@ input {
   display: flex;
   gap: 5px;
   align-items: center;
-  border: 2px solid red;
+
   flex-wrap: wrap;
 }
 
@@ -163,7 +166,7 @@ input {
   display: flex;
   gap: 5px;
   align-items: center;
-  border: 2px solid red;
+
   flex-wrap: wrap;
 }
 
@@ -173,7 +176,6 @@ input {
   display: flex;
   gap: 5px;
   align-items: center;
-  border: 2px solid red;
 }
 
 /* DESTINO COMPLETO */
@@ -182,7 +184,7 @@ input {
   display: flex;
   gap: 5px;
   align-items: center;
-  border: 2px solid red;
+
   flex-wrap: wrap;
 }
 
@@ -192,7 +194,7 @@ input {
   display: flex;
   gap: 5px;
   align-items: center;
-  border: 2px solid red;
+
   flex-wrap: wrap;
 }
 /* ---------------------------------------------------------- */

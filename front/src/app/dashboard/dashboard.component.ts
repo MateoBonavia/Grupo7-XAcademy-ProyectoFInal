@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EncuestaService } from '../services/encuesta.service';
 
+import { MatExpansionModule, MatAccordion } from '@angular/material/expansion';
+import { PageEvent } from '@angular/material/paginator';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -10,13 +13,24 @@ export class DashboardComponent implements OnInit {
   constructor(public encuestaService: EncuestaService) {}
 
   encuestasList: any = [];
+  pageSlice: any = [];
+
+  onPageChange = (event: PageEvent) => {
+    const startIndex = event.pageIndex * event.pageSize;
+    let endIndex = startIndex + event.pageSize;
+    if (endIndex > this.encuestasList.length) {
+      endIndex = this.encuestasList.length;
+    }
+    this.pageSlice = this.encuestasList.slice(startIndex, endIndex);
+  };
 
   ngOnInit(): void {
     const result = this.encuestaService
       .getEncuesta()
       .subscribe((encuestas: any) => {
         this.encuestasList = encuestas;
-        console.log(encuestas);
+        this.pageSlice = this.encuestasList.slice(0, 3);
+        console.log(this.pageSlice);
       });
   }
 }
