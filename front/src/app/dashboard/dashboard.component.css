@@ -1,17 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+
 .container {
-  background-color: #4c5c68;
+  background-color: #a0ccda;
   height: 100vh;
+}
+
+.general-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.resume {
+  width: 80vw;
+  margin: 20px 0;
+}
+
+.cant-encuestas {
+  background-color: #347183;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  width: 30%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cant-encuestas h3 {
+  font-size: 40px;
+  font-family: "Oswald", sans-serif;
+  padding-left: 10px;
 }
 
 .title {
   text-align: center;
   font-size: 30px;
   margin-top: 20px;
+  width: 100%;
 }
 
-/* .encuestas-container {
+.encuestas-container {
   width: 80vw;
-} */
+}
+
 .item {
   cursor: pointer;
 }

@@ -1,21 +1,18 @@
-.container {
-  /* background-image: url("../../assets/images/nicolas-ruiz-KofxGY-TJ5s-unsplash.jpg"); */
-  /* background-size: cover; */
-  /* background-position: center; */
-  height: 100vh;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 .layout {
-  background-color: #4c5c68;
+  background-image: url("../../assets/images/wallpaperflare.com_wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
 
   display: grid;
   grid:
     "header" auto
-    "main" 1fr
-    "footer" auto
-    / 1fr;
-  gap: 8px;
+    "main" 1fr;
+  /* gap: 8px; */
 }
 
 .header {
@@ -26,63 +23,73 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.imgs {
-  /* background-color: green; */
-  display: flex;
-  flex-direction: column;
-  width: 700px;
-  margin-top: 50px;
-  margin-left: 100px;
-}
-
-.first-img {
-  transform: rotate(-20deg);
-  align-self: start;
-}
-
-.first-img > img {
-  border-radius: 100px 50px 130px 50px;
-  height: 240px;
-}
-
-.second-img {
-  transform: rotate(20deg);
-  align-self: end;
-}
-
-.second-img > img {
-  border-radius: 100px 50px 100px 50px;
-  height: 240px;
-}
-
-.third-img {
-  transform: rotate(-20deg);
-  align-self: start;
-}
-
-.third-img > img {
-  border-radius: 100px 50px 100px 50px;
-  height: 240px;
+  width: 40vw;
+  background-color: #f8f3e3;
 }
 
 .description {
-  /* background-color: red; */
-  margin-right: 150px;
-  text-align: center;
-  align-self: center;
-  width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-around;
+  padding: 50px;
+  border-radius: 10px;
+  height: calc(100vh - 500px);
 }
 
 .description h1 {
-  font-size: 70px;
+  font-size: 60px;
+  font-family: "Lora", serif;
+  width: 100%;
 }
 
 .description p {
   font-size: 20px;
 }
 
-.footer {
-  grid-area: footer;
+.btn-container {
+  border: 1px solid black;
+  background-color: #000;
+  width: 100%;
+  height: 0.5px;
+}
+
+.btn-sitio {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e0e0e0;
+  height: 25px;
+  width: 100px;
+  font-size: 20px;
+  background-color: #1985a1;
+  padding: 5px 20px;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: all 0.2s ease;
+}
+
+.btn-sitio:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn-encuesta {
+  margin-left: 40px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e0e0e0;
+  height: 25px;
+  width: 100px;
+  font-size: 20px;
+  background-color: #0f5769;
+  padding: 5px 20px;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: all 0.2s ease;
+}
+
+.btn-encuesta:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

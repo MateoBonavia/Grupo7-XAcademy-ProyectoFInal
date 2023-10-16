@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
 
   encuestasList: any = [];
   pageSlice: any = [];
+  ultimoElemento: any = [];
 
   onPageChange = (event: PageEvent) => {
     const startIndex = event.pageIndex * event.pageSize;
@@ -30,6 +31,7 @@ export class DashboardComponent implements OnInit {
       .subscribe((encuestas: any) => {
         this.encuestasList = encuestas;
         this.pageSlice = this.encuestasList.slice(0, 3);
+        this.ultimoElemento = this.encuestasList[this.encuestasList.length - 1];
         console.log(this.pageSlice);
       });
   }
