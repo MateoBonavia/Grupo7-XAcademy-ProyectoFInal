@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable comma-dangle */
-/* eslint-disable quotes */
 require("dotenv").config();
 
 // Express Dependencies:

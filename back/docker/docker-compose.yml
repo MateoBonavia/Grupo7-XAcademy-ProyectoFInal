@@ -27,7 +27,7 @@ services:
     #use pruebas
     #show databases;
 
-    #Puerto 3307 de la computadora apunta al puerto 3306 del contenedor host
+    #Puerto 3308 de la computadora apunta al puerto 3306 del contenedor host
     #El puerto 3306 es el puerto por defecto de mysql por lo que se mapea de esta forma
  
     #(necesario apt install mysql-client si no tiene)
