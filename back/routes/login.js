@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
   const userFound = await userService.validateUser(email, password);
   if (userFound) {
     const token = jwt.sign({ email, role: 'Admin' }, authMiddleware.SERVER_SECRET);
-    res.json({ token });
+    res.header('authorization', token).json({ message: 'Usuario logeado', token });
   } else {
     res.status(401).json({ error: 'Invalid User' });
   }

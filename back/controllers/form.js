@@ -15,8 +15,9 @@ const getForm = async (req, res) => {
 
     if (!form) {
       res.status(404).json({ action: 'getForm', error: 'Form not found' });
+    } else {
+      res.json(form);
     }
-    res.json(form);
   } catch (err) {
     res.status(500).json({ action: 'getForm', error: err.message });
   }
@@ -27,8 +28,9 @@ const getAllForms = async (req, res) => {
     const forms = await formService.getAllForms();
     if (!forms) {
       res.status(404).json({ action: 'getAllForms', error: 'Forms not found' });
+    } else {
+      res.json(forms);
     }
-    res.json(forms);
   } catch (err) {
     res.status(500).json({ action: 'getAllForms', error: err.message });
   }

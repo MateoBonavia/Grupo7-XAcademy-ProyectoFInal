@@ -19,7 +19,9 @@ const cors = require("cors");
 
 // Rutes:
 
-const { userRouter, logginRouter, formRouter } = require('./routes');
+const {
+  userRouter, logginRouter, formRouter, authRouter
+} = require('./routes');
 const config = require('./config/config');
 
 const app = express();
@@ -105,6 +107,7 @@ app.get("/", (req, res) => {
 app.use('/login', logginRouter);
 app.use('/user', userRouter);
 app.use('/form', formRouter);
+app.use('/auth', authRouter);
 // app.use('/app', appRouter);
 
 module.exports = app;
