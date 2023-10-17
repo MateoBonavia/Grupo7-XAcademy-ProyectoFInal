@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import {
   ActivatedRouteSnapshot,
   CanActivate,
@@ -15,6 +16,7 @@ import { AuthService } from './auth.service';
 })
 export class GuardGuard implements CanActivate {
   constructor(private auth: AuthService, private router: Router) {}
+  token = localStorage.getItem('token');
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -23,7 +25,7 @@ export class GuardGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (!this.auth.isLogin()) {
+    if (!this.auth.isLogin(this.token)) {
       return this.router.navigate(['/login']).then(() => false);
     }
     return true;

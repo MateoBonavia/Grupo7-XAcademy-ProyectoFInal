@@ -2,15 +2,19 @@
   <app-navbar></app-navbar>
   <div class="contact-container">
     <div class="forStyle">
-      <form class="example-form">
+      <form [formGroup]="myForm" class="example-form" (ngSubmit)="onSubmit()">
         <mat-form-field class="example-full-width">
           <mat-label>Email</mat-label>
-          <input matInput />
+          <input matInput formControlName="email" />
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <mat-label>Escriba su duda o recomandacion...</mat-label>
-          <textarea matInput class="comments"></textarea>
+          <mat-label>Escriba su duda o recomendacion...</mat-label>
+          <textarea
+            matInput
+            class="comments"
+            formControlName="comments"
+          ></textarea>
         </mat-form-field>
         <button class="btn">Enviar</button>
       </form>

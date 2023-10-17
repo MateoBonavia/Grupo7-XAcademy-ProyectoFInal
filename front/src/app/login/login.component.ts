@@ -56,8 +56,9 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', response.token);
         },
         error: (error) => {
-          alert('email o Contraseña incorrectos');
-          this.router.navigate(['login']);
+          console.log(error);
+          this.toggleBadgeVisibilityEmail(false);
+          this.toggleBadgeVisibilityPass(false);
         },
       });
     }
