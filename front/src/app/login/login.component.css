@@ -63,6 +63,18 @@ form .head {
   font-weight: 200;
 }
 
+.warnEmail {
+  position: absolute;
+  left: 750px;
+  top: 392px;
+}
+
+.warnPass {
+  position: absolute;
+  left: 750px;
+  top: 450px;
+}
+
 .form > button {
   background-color: #4287ef;
   color: white;

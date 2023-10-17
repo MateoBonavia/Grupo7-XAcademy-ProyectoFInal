@@ -1,25 +1,39 @@
 <div class="container">
   <app-navbar></app-navbar>
-  <h2 class="title">Encuestas</h2>
-  <div class="encuestas-container">
-    <mat-list class="encuestas">
-      <mat-list-item class="item">Item 1</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item class="item">Item 2</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item class="item">Item 3</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item class="item">Item 4</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item class="item">Item 5</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item class="item">Item 6</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item class="item">Item 7</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item class="item">Item 8</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item class="item">Item 9</mat-list-item>
-    </mat-list>
+  <div class="general-container">
+    <div class="resume">
+      <div class="cant-encuestas">
+        <h3>Cantidad de encuestas: {{ this.ultimoElemento.id }}</h3>
+      </div>
+    </div>
+    <div class="encuestas-container">
+      <mat-accordion *ngFor="let encuesta of pageSlice">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title> {{ encuesta.id }} </mat-panel-title>
+            <mat-panel-description>
+              {{ encuesta.edad }} años
+            </mat-panel-description>
+            <mat-panel-description>
+              {{ encuesta.procedencia }}
+            </mat-panel-description>
+            <mat-panel-description>
+              {{ encuesta.createdAt }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div>
+            <h3>¿Por que eligio Mina Clavero?</h3>
+            <p>{{ encuesta.motivoEleccion }}</p>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-paginator
+        [length]="this.encuestasList.length"
+        [pageSize]="2"
+        [pageSizeOptions]="[1, 2, 3]"
+        (page)="onPageChange($event)"
+      >
+      </mat-paginator>
+    </div>
   </div>
 </div>

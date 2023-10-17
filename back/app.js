@@ -1,17 +1,14 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable comma-dangle */
-/* eslint-disable quotes */
-require("dotenv").config();
+require('dotenv').config();
 
 // Express Dependencies:
-const express = require("express");
+const express = require('express');
 // Sanitizacion XSS
-const xss = require("xss-clean");
+const xss = require('xss-clean');
 // Custom Dependencies:
-const helmet = require("helmet");
-const session = require("express-session");
+const helmet = require('helmet');
+const session = require('express-session');
 // Winston logger Dependencies
-const cors = require("cors");
+const cors = require('cors');
 // const logger = require("./utils/winston.logger");
 
 // Models:
@@ -20,7 +17,7 @@ const cors = require("cors");
 // Rutes:
 
 const {
-  userRouter, logginRouter, formRouter, authRouter
+  userRouter, logginRouter, formRouter, authRouter,
 } = require('./routes');
 const config = require('./config/config');
 
@@ -33,11 +30,11 @@ const sixtyDaysInSeconds = 5184000;
 app.use(
   helmet.hsts({
     maxAge: sixtyDaysInSeconds,
-  })
+  }),
 );
 // Sets "X-Content-Type-Options: nosniff".
 app.use(helmet.noSniff());
-app.use(helmet.frameguard({ action: "deny" }));
+app.use(helmet.frameguard({ action: 'deny' }));
 
 app.use(xss());
 // Sets cookies security settings
@@ -46,21 +43,21 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   cookie: {
-    sameSite: "strict",
+    sameSite: 'strict',
     secure: true,
   },
 };
 
-if (config.environment === "production") {
-  app.set("trust proxy", 1); // trust first proxy
+if (config.environment === 'production') {
+  app.set('trust proxy', 1); // trust first proxy
 }
 app.use(session(sess));
 app.use(
   express.urlencoded({
     extended: false,
-    limit: "10kb",
+    limit: '10kb',
     parameterLimit: 10,
-  })
+  }),
 );
 
 app.use(express.json());
@@ -69,7 +66,7 @@ app.use(express.json());
 // const whitelist = process.env.CORS.split(" ");
 
 const corsOptions = {
-  origin: '*'
+  origin: '*',
 };
 /*
 const corsOptions = {
@@ -85,8 +82,8 @@ const corsOptions = {
 */
 app.use(cors(corsOptions));
 
-if (config.environment === "production") {
-  app.set("trust proxy", 1); // trust first proxy
+if (config.environment === 'production') {
+  app.set('trust proxy', 1); // trust first proxy
 }
 
 /*
@@ -100,8 +97,8 @@ models.sequelize.authenticate()
   });
 
 */
-app.get("/", (req, res) => {
-  res.send("Hola desde la ruta principal");
+app.get('/', (req, res) => {
+  res.send('Hola desde la ruta principal');
 });
 
 app.use('/login', logginRouter);

@@ -19,7 +19,5 @@ export class NavbarComponent implements OnInit {
       this.router.navigate(['login']);
     }
   };
-  ngOnInit(): void {
-    console.log(this.btn);
-  }
+  ngOnInit(): void {}
 }
